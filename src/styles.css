@@ -1,0 +1,15 @@
+html, body{
+  font-family: 'Josefin Sans', sans-serif;
+  /* background-color: #e2d8d8; */
+  background-color: #5b6069;
+  /* background-color: #232355; */
+
+}
+
+._numeros{
+  font-family: 'Roboto Mono', monospace;
+}
+
+._tabla{
+  font-family: 'Josefin Sans', sans-serif;
+}
