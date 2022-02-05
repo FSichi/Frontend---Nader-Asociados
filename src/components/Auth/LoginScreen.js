@@ -22,9 +22,9 @@ export const LoginScreen = () => {
     }
 
     return (
-        <section className="gradient-custom"> {/* vh-100 --> Estilo para centrarlo */}
-            <div className="container mt-3 mb-3 vh-100">
-                <div className="row d-flex justify-content-center align-items-center h-100">
+        <section className="gradient-custom mt-5"> {/* vh-100 --> Estilo para centrarlo */}
+            <div className="container mt-3 mb-3 ">
+                <div className="row d-flex justify-content-center align-items-center ">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div className="card bg-dark text-white" style={{ borderRadius: '1rem' }}>
                             <div className="card-body p-5 text-center">
