@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux'
 import { useForm } from '../../hooks/useForm';
 import { Link } from 'react-router-dom'
-// import { startLoginEmailPassword, startGoogleLogin } from '../../actions/auth'
 import { startLoginEmailPassword } from '../../actions/auth'
 
 
@@ -21,11 +20,6 @@ export const LoginScreen = () => {
         e.preventDefault();
         dispatch(startLoginEmailPassword(email, password));
     }
-
-/*     const handleGoogleLogin = (e) => {
-        e.preventDefault();
-        dispatch(startGoogleLogin());
-    } */
 
     return (
         <section className="gradient-custom"> {/* vh-100 --> Estilo para centrarlo */}
@@ -71,17 +65,6 @@ export const LoginScreen = () => {
                                         className="btn btn-outline-light btn-lg px-5"
                                         type="submit">Iniciar Sesion
                                     </button>
-
-                                    {/* LOGIN CON GOOGLE */}
-
-{/*                                     <div className='row'>
-                                        <div>
-                                            <button className="btn btn-outline-light btn-lg px-5 mt-4" onClick={handleGoogleLogin}>
-                                                <i className="fab fa-google"></i>
-                                            </button>
-                                        </div>
-                                    </div> */}
-
 
                                 </form>
 

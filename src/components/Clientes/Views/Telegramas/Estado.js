@@ -10,7 +10,7 @@ export const Estado = ({ cliente }) => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/general/clienteScreen/telegramas/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/clienteScreen/telegramas/${cliente.cuit_cuil}`).then((resp) => {
             setTelegramaCliente(resp.data[0]);
             setFirmaCliente(resp.data[1]);
 

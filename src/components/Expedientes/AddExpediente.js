@@ -58,7 +58,7 @@ export const AddExpediente = ({ history }) => {
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/general/addExpediente`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/addExpediente`).then((resp) => {
 
             setClientesDB(resp.data[0]);
             setEstadoClientesDB(resp.data[1]);
@@ -252,24 +252,24 @@ export const AddExpediente = ({ history }) => {
 
             /* --------------------------- LLAMAR A DB --------------------------- */
 
-            axios.post(`http://localhost:3001/expedientes`, expediente)
+            axios.post(`https://backend-nader.herokuapp.com/expedientes`, expediente)
 
-            axios.post(`http://localhost:3001/expedientes/capitales`, expediente_capitales);
+            axios.post(`https://backend-nader.herokuapp.com/expedientes/capitales`, expediente_capitales);
 
             fichasClientes.forEach(ficha => {
-                axios.post(`http://localhost:3001/expedientes/expCli`, ficha);
+                axios.post(`https://backend-nader.herokuapp.com/expedientes/expCli`, ficha);
             });
 
-            axios.post(`http://localhost:3001/juicios/obligatorio/estado`, job_estados);
+            axios.post(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado`, job_estados);
 
-            axios.post(`http://localhost:3001/juicios/obligatorio/fechas`, job_fechas);
+            axios.post(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas`, job_fechas);
 
-            axios.post(`http://localhost:3001/juicios/opcional/estado`, jop_estados);
+            axios.post(`https://backend-nader.herokuapp.com/juicios/opcional/estado`, jop_estados);
 
-            axios.post(`http://localhost:3001/juicios/opcional/fechas`, jop_fechas);
+            axios.post(`https://backend-nader.herokuapp.com/juicios/opcional/fechas`, jop_fechas);
 
             estadoClientes.forEach(ficha => {
-                axios.put(`http://localhost:3001/clientes/estados/${ficha.id}`, ficha)
+                axios.put(`https://backend-nader.herokuapp.com/clientes/estados/${ficha.id}`, ficha)
             });
 
             Swal.fire({

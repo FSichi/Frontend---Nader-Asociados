@@ -39,7 +39,7 @@ export const Secretaria = () => {
                 fechaHasta: new Date(fechaHasta).getTime()
             }
 
-            axios.get(`http://localhost:3001/filtros/secretaria/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
+            axios.get(`https://backend-nader.herokuapp.com/filtros/secretaria/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
                 setTotalFacturado(resp.data);
                 setBanderaCarga(true);
             });

@@ -13,7 +13,7 @@ export const ClienteCard = ({ expedienteCli }) => {
     const [banderaCarga, setBanderaCarga] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/general/clienteCard/${expedienteCli.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/clienteCard/${expedienteCli.cuit_cuil}`).then((resp) => {
             setCliente(resp.data[0]);
             setExpediente(resp.data[1]);
             setBanderaCarga(true);
@@ -47,7 +47,7 @@ export const ClienteCard = ({ expedienteCli }) => {
             capitalOtorgado: capitalOtorgado,
         }
 
-        axios.put(`http://localhost:3001/expedientes/expCli/${expedienteCli.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/expCli/${expedienteCli.id}`, data);
 
         Swal.fire({
             title: `Ficha de Expediente de ${cliente.apellidoyNombre} Actualizada Correctamente`,

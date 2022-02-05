@@ -91,7 +91,7 @@ export const MenuListExpediente = () => {
 
         localStorage.setItem("ruta", `/exp/list`);
 
-        axios.get(`http://localhost:3001/general/listadoExp`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/listadoExp`).then((resp) => {
             setExpedientesAll(resp.data[2]);
             setExpedientesIndividuales(resp.data[0]);
             setExpedientesColectivos(resp.data[1]);
@@ -104,31 +104,38 @@ export const MenuListExpediente = () => {
 
             <div className='mt-3'>
 
-                <TabsUnstyled defaultValue={0}>
+                {
+                    (bandera)
+                    &&
+                    (
+                        <TabsUnstyled defaultValue={0}>
 
-                    <div className='d-flex justify-content-center ms-3 me-3'>
+                            <div className='d-flex justify-content-center ms-3 me-3'>
 
-                        <TabsList className='col-12'>
-                            <Tab>TODOS</Tab>
-                            <Tab>INDIVIDUALES</Tab>
-                            <Tab>COLECTIVOS</Tab>
-                        </TabsList>
+                                <TabsList className='col-12'>
+                                    <Tab>TODOS</Tab>
+                                    <Tab>INDIVIDUALES</Tab>
+                                    <Tab>COLECTIVOS</Tab>
+                                </TabsList>
 
-                    </div>
+                            </div>
 
-                    <TabPanel value={0}>
-                        <ExpedientesAllList expedientes={expedientesAll} />
-                    </TabPanel>
+                            <TabPanel value={0}>
+                                <ExpedientesAllList expedientes={expedientesAll} />
+                            </TabPanel>
 
-                    <TabPanel value={1}>
-                        <ExpedienteIndList expedientes={expedientesIndividuales} />
-                    </TabPanel>
+                            <TabPanel value={1}>
+                                <ExpedienteIndList expedientes={expedientesIndividuales} />
+                            </TabPanel>
 
-                    <TabPanel value={2}>
-                        <ExpedienteColList expedientes={expedientesColectivos} />
-                    </TabPanel>
+                            <TabPanel value={2}>
+                                <ExpedienteColList expedientes={expedientesColectivos} />
+                            </TabPanel>
 
-                </TabsUnstyled>
+                        </TabsUnstyled>
+                    )
+
+                }
 
             </div>
 

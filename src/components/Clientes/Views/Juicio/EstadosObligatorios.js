@@ -19,7 +19,7 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/general/juiciosObligatorios?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/juiciosObligatorios?data=${expediente.numeroExp}`).then((resp) => {
             setEstadosJuicio(resp.data[0]);
             setFechasJuicio(resp.data[1]);
             setBanderaCarga(true);
@@ -98,9 +98,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -174,9 +174,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -250,9 +250,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -326,9 +326,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -402,9 +402,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -478,9 +478,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -554,9 +554,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -630,9 +630,9 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -729,15 +729,15 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`http://localhost:3001/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
-        axios.post(`http://localhost:3001/expedientes/capitales/primera`, expediente_capitalPrimera).then((response) => {
+        axios.post(`https://backend-nader.herokuapp.com/expedientes/capitales/primera`, expediente_capitalPrimera).then((response) => {
             console.log('Capital Primera Creado: ', response.data);
         });
 
-        axios.put(`http://localhost:3001/expedientes/capitales/${expCapitales.id}`, expediente_capitales);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/capitales/${expCapitales.id}`, expediente_capitales);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);

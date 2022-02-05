@@ -99,7 +99,6 @@ export const RegisterScreen = () => {
         setSecurityState(true);
     }
 
-
     return (
         <section className="gradient-custom"> {/* vh-100 --> Estilo para centrarlo */}
             <div className="container mt-3 mb-3 vh-100">

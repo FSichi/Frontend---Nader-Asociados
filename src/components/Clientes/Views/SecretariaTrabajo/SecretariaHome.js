@@ -11,7 +11,6 @@ import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 
 /* IMPORT DE LAS VIEWS */
 import { SecretariaScreen } from './SecretariaScreen';
-// import { SecretariaEstado } from './SecretariaEstado';
 
 const blue = {
     50: '#F0F7FF',
@@ -86,7 +85,7 @@ export const SecretariaHome = ({ cliente, estadoCli }) => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/clientes/secretaria/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/secretaria/${cliente.cuit_cuil}`).then((resp) => {
             setSecretariaCliente(resp.data);
             setBanderaCarga(true);
         });
@@ -106,17 +105,12 @@ export const SecretariaHome = ({ cliente, estadoCli }) => {
                         <div className='d-flex justify-content-center'>
                             <TabsList className='ms-5 me-5 col-6'>
                                 <Tab>FICHA</Tab>
-                                {/* <Tab>ESTADO</Tab> */}
                             </TabsList>
                         </div>
 
                         <TabPanel value={0}>
                             <SecretariaScreen cliente={cliente} sc={secretariaCliente} estadoCli={estadoCli}/>
                         </TabPanel>
-
-                        {/* <TabPanel value={1}>
-                            <SecretariaEstado fichaSecretaria={secretariaCliente} />
-                        </TabPanel> */}
 
                     </TabsUnstyled>
                 )

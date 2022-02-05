@@ -40,7 +40,7 @@ export const Actualizacion = ({ expediente, fichaCapAct }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/expedientes/capitales/actualizacion/${fichaCapital.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/capitales/actualizacion/${fichaCapital.id}`, data);
 
         setFichaCapital(data);
 

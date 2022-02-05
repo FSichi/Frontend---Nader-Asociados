@@ -5,8 +5,6 @@ import { getExpedientesByNumber } from '../../../selector/Expedientes';
 
 export const ExpedientesAllList = (expedientes) => {
 
-    // console.log('AQUI: ', expedientes.expedientes);
-
     const [formValues, handleInputChange] = useForm({
         search: ''
     });

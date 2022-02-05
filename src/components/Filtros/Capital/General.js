@@ -39,12 +39,10 @@ export const General = () => {
                 fechaHasta: new Date(fechaHasta).getTime()
             }
 
-            axios.get(`http://localhost:3001/filtros/general/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
+            axios.get(`https://backend-nader.herokuapp.com/filtros/general/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
                 setTotalFacturado(resp.data);
                 setBanderaCarga(true);
             });
-
-
 
             Swal.fire({
                 title: 'Filtrando. Espera por favor',

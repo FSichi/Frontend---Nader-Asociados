@@ -11,7 +11,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/clientes/telegramas/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/telegramas/${cliente.cuit_cuil}`).then((resp) => {
             setTelegramasCliente(resp.data);
 
             setBanT2(resp.data.estadoT2);
@@ -107,7 +107,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
             estadoGeneral: telegramasCliente.estadoGeneral,
         }
 
-        axios.put(`http://localhost:3001/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader.herokuapp.com/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -167,7 +167,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
             estadoGeneral: telegramasCliente.estadoGeneral,
         }
 
-        axios.put(`http://localhost:3001/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader.herokuapp.com/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -227,7 +227,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
             estadoGeneral: telegramasCliente.estadoGeneral,
         }
 
-        axios.put(`http://localhost:3001/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader.herokuapp.com/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -287,7 +287,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
             estadoGeneral: telegramasCliente.estadoGeneral,
         }
 
-        axios.put(`http://localhost:3001/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader.herokuapp.com/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -347,7 +347,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
             estadoGeneral: telegramasCliente.estadoGeneral,
         }
 
-        axios.put(`http://localhost:3001/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader.herokuapp.com/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -396,7 +396,7 @@ export const Documentos = ({ cliente, estadoCli }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.put(`http://localhost:3001/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
+                axios.put(`https://backend-nader.herokuapp.com/clientes/telegramas/${telegramasCliente.id}`, data).then((response) => {
                     console.log('Estado Actualizado: ', response.data);
                 });
 

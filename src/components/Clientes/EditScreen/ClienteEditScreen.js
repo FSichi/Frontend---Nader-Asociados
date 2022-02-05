@@ -92,7 +92,7 @@ export const ClienteEditScreen = () => {
 
         localStorage.setItem("ruta", `/cli/${clienteId}/edit`);
 
-        axios.get(`http://localhost:3001/clientes/${clienteId}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/${clienteId}`).then((resp) => {
             setCliente(resp.data);
             setBanderaCarga(true);
         });

@@ -17,7 +17,7 @@ export const Resumen = ({ cliente, estadoCli, history }) => {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:3001/general/clienteScreen/resumen/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/clienteScreen/resumen/${cliente.cuit_cuil}`).then((resp) => {
 
             setEstadoCliente(estadoCli);
             setFirmasCliente(resp.data[0]);
@@ -82,7 +82,7 @@ export const Resumen = ({ cliente, estadoCli, history }) => {
                     fechaFinalizado: ''
                 }
 
-                axios.post("http://localhost:3001/clientes/secretaria", fichaSecretaria).then((response) => {
+                axios.post("https://backend-nader.herokuapp.com/clientes/secretaria", fichaSecretaria).then((response) => {
                     console.log('Ficha Secretaria Registrada', response.data);
                 });
 
@@ -100,7 +100,7 @@ export const Resumen = ({ cliente, estadoCli, history }) => {
                     estadoOperacion: 'En Secretaria'
                 }
 
-                axios.put(`http://localhost:3001/clientes/estados/${estadoCliente.id}`, estadoCli).then((response) => {
+                axios.put(`https://backend-nader.herokuapp.com/clientes/estados/${estadoCliente.id}`, estadoCli).then((response) => {
                     console.log('Estado Actualizado: ', response.data);
                 });
 

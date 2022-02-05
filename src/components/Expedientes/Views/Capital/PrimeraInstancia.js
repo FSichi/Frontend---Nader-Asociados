@@ -44,7 +44,7 @@ export const PrimeraInstancia = ({ expediente, fichaCapPrim }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/expedientes/capitales/primera/${fichaCapital.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/capitales/primera/${fichaCapital.id}`, data);
 
         setFichaCapital(data);
 

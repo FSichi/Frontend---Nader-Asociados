@@ -41,7 +41,7 @@ export const SegundaInstancia = ({ expediente, fichaCapSeg }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`http://localhost:3001/expedientes/capitales/segunda/${fichaCapital.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/capitales/segunda/${fichaCapital.id}`, data);
 
         setFichaCapital(data);
 
@@ -52,7 +52,6 @@ export const SegundaInstancia = ({ expediente, fichaCapSeg }) => {
             confirmButtonText: 'Continuar'
         });
 
-        
     }
 
     return (

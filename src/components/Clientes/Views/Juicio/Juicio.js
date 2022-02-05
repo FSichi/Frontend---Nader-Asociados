@@ -85,7 +85,7 @@ export const Juicio = ({ expediente }) => {
     const [banderaCarga, setBanderaCarga] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/expedientes/capitales/ind?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/expedientes/capitales/ind?data=${expediente.numeroExp}`).then((resp) => {
             setExpedienteCapitales(resp.data);
             setBanderaCarga(true);
         });

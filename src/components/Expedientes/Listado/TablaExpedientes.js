@@ -54,7 +54,6 @@ export const TablaExpedientes = ({ expedientes }) => {
         setPage(0);
     };
 
-
     return (
         <div >
             <TableContainer component={Paper} className={classes.tableContainer}>
@@ -147,7 +146,7 @@ export const TablaExpedientes = ({ expedientes }) => {
                                             <img src={`../assets/menu2.svg`} alt='Usuario' style={{ height: '20px', width: '20px' }} />
                                         </button>
                                     </Popover> */}
-                                    
+
                                 </TableCell>
                             </TableRow>
                         ))}

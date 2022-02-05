@@ -12,7 +12,7 @@ export const ReportesClientes = () => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3001/clientes").then((resp) => {
+        axios.get("https://backend-nader.herokuapp.com/clientes").then((resp) => {
             setListOfClientes(resp.data)
         });
 

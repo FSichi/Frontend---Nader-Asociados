@@ -94,7 +94,7 @@ export const Capital = ({ expediente }) => {
     const [banderaCarga, setBanderaCarga] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/general/capitalesExp?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/capitalesExp?data=${expediente.numeroExp}`).then((resp) => {
             setCapitalesExpediente(resp.data[0]);
             setCapitalPrimeraInstancia(resp.data[1]);
             setCapitalSegundaInstancia(resp.data[2]);

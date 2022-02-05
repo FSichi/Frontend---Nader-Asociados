@@ -57,7 +57,7 @@ export const DatosCliente = ({ cliente }) => {
 
         /* LLAMAR A LA DB */
 
-        axios.put(`http://localhost:3001/clientes/${cliente.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/clientes/${cliente.id}`, data);
 
         Swal.fire({
             title: 'Cliente Modificado Correctamente',

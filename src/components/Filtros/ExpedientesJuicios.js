@@ -44,7 +44,7 @@ export const ExpedientesJuiciosFilter = () => {
     useEffect(() => {
 
         if (!bandera) {
-            axios.get("http://localhost:3001/general/filtros/expedientes").then((resp) => {
+            axios.get("https://backend-nader.herokuapp.com/general/filtros/expedientes").then((resp) => {
 
                 setListofExpedientes(resp.data);
 

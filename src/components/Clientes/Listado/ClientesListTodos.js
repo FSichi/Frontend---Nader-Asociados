@@ -10,7 +10,7 @@ export const ClientesListTodos = () => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3001/clientes").then((response) => {
+        axios.get("https://backend-nader.herokuapp.com/clientes").then((response) => {
             setListClientes(response.data)
         });
 

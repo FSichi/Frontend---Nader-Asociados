@@ -95,7 +95,7 @@ export const MenuList = () => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3001/general/listadoCli").then((response) => {
+        axios.get("https://backend-nader.herokuapp.com/general/listadoCli").then((response) => {
             setClientesTelegramas(getClientesEnTelegramas(response.data[0], response.data[1], response.data[2], response.data[3]));
             setClientesDemanda(getClientesEnDemanda(response.data[0], response.data[1], response.data[2], response.data[3]));
             setClientesJuicio(getClientesEnJuicio(response.data[0], response.data[1]));
