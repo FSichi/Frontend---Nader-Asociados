@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React from 'react'
 
 /* IMPORT DE LAS TABS */
 import { styled } from '@mui/system';
@@ -81,44 +80,32 @@ const TabsList = styled(TabsListUnstyled)`
 
 export const Juicio = ({ expediente }) => {
 
-    const [expedienteCapitales, setExpedienteCapitales] = useState({});
-    const [banderaCarga, setBanderaCarga] = useState(false);
-
-    useEffect(() => {
-        axios.get(`https://backend-nader.herokuapp.com/expedientes/capitales/ind?data=${expediente.numeroExp}`).then((resp) => {
-            setExpedienteCapitales(resp.data);
-            setBanderaCarga(true);
-        });
-    }, [expediente.numeroExp]);
 
     return (
         <div className='container-lg-fluid container-md-fluid'>
 
             <div className='mt-4'>
-                {
-                    (banderaCarga)
-                    &&
-                    (
-                        <TabsUnstyled defaultValue={0}>
 
-                            <div className='d-flex justify-content-center'>
-                                <TabsList className='ms-5 me-5 col-6'>
-                                    <Tab>ESTADOS OBLIGATORIOS</Tab>
-                                    <Tab>ESTADOS OPCIONALES</Tab>
-                                </TabsList>
-                            </div>
+                <TabsUnstyled defaultValue={0}>
 
-                            <TabPanel value={0}>
-                                <EstadosObligatorios expediente={expediente} expCapitales={expedienteCapitales}/>
-                            </TabPanel>
+                    <div className='d-flex justify-content-center'>
+                        <TabsList className='ms-5 me-5 col-6'>
+                            <Tab>ESTADOS OBLIGATORIOS</Tab>
+                            <Tab>ESTADOS OPCIONALES</Tab>
+                        </TabsList>
+                    </div>
 
-                            <TabPanel value={1}>
-                                <EstadosOpcionales expediente={expediente} expCapitales={expedienteCapitales}/>
-                            </TabPanel>
+                    <TabPanel value={0}>
+                        <EstadosObligatorios expediente={expediente} />
+                    </TabPanel>
 
-                        </TabsUnstyled>
-                    )
-                }
+                    <TabPanel value={1}>
+                        <EstadosOpcionales expediente={expediente} />
+                    </TabPanel>
+
+                </TabsUnstyled>
+
+
             </div>
 
         </div>

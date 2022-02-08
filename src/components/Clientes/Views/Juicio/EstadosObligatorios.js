@@ -5,9 +5,10 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 import { EstadosObligatoriosSelect, customStyles } from '../../../../helpers/JuiciosSelector'
 
-export const EstadosObligatorios = ({ expediente, expCapitales }) => {
+export const EstadosObligatorios = ({ expediente }) => {
 
     const [estadosJuicio, setEstadosJuicio] = useState({});
+    const [expCapitales, setExpCapitales] = useState({});
     const [fechasJuicio, setFechasJuicio] = useState({});
 
     const [banderaCarga, setBanderaCarga] = useState(false);
@@ -18,6 +19,10 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
     });
 
     useEffect(() => {
+
+        axios.get(`https://backend-nader.herokuapp.com/expedientes/capitales/ind?data=${expediente.numeroExp}`).then((resp) => {
+            setExpCapitales(resp.data);
+        });
 
         axios.get(`https://backend-nader.herokuapp.com/general/juiciosObligatorios?data=${expediente.numeroExp}`).then((resp) => {
             setEstadosJuicio(resp.data[0]);
@@ -727,11 +732,16 @@ export const EstadosObligatorios = ({ expediente, expCapitales }) => {
             capitalActualizacion: expCapitales.capitalActualizacion
         }
 
-        /* LLAMAR A DB */
+        console.log('ESTADO JUICIOS: ', dataEstado);
+        console.log('FECHAS JUICIOS: ', dataFechas);
+        console.log('CAPITAL PRIMERA: ', expediente_capitalPrimera);
+        console.log('EXPEDIENTES_CAPITALES: ', expediente_capitales);
 
         axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
         axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+
+        /* LLAMAR A DB */
 
         axios.post(`https://backend-nader.herokuapp.com/expedientes/capitales/primera`, expediente_capitalPrimera).then((response) => {
             console.log('Capital Primera Creado: ', response.data);
