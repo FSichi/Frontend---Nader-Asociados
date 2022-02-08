@@ -61,7 +61,7 @@ export const Navbar = () => {
                         <Link to='/dashboard'>
                             <img src={`../../assets/logo.svg`} alt='Logo' className='d-inline-block align-text-top' style={{ width: '50px', height: '50px' }} />
                         </Link>
-                        <span className='ms-3' style={{ position: 'absolute', marginTop: '15px' }}>Sistema de Gestion de Clientes</span>
+                        <span className='ms-3' style={{ position: 'absolute', marginTop: '15px' }}>Nader & Asociados</span>
                     </span>
                     <button
                         className="navbar-toggler"
