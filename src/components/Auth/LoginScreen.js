@@ -70,7 +70,7 @@ export const LoginScreen = () => {
 
                                 <div>
                                     <span className="mb-0">Aun no Tienes Cuenta?
-                                        <Link className="fw-bold ms-2" to='/auth/register' style={{ textDecoration: 'none' }}>
+                                        <Link className="fw-bold ms-2 text-login" to='/auth/register' style={{ textDecoration: 'none' }}>
                                             Registrate
                                         </Link>
                                     </span>

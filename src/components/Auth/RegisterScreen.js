@@ -234,7 +234,7 @@ export const RegisterScreen = () => {
 
                                 <div>
                                     <span className="mb-0">Ya tienes una cuenta?
-                                        <Link className="fw-bold ms-2" to='/auth/login' style={{ textDecoration: 'none' }}>
+                                        <Link className="fw-bold ms-2 text-login" to='/auth/login' style={{ textDecoration: 'none' }}>
                                             Inicia Sesion
                                         </Link>
                                     </span>

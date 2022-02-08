@@ -11,3 +11,7 @@ html, body{
 ._tabla{
   font-family: 'Josefin Sans', sans-serif;
 }
+
+.text-login{
+  color: greenyellow
+}
