@@ -14,10 +14,10 @@ export const ReportesJuicios = () => {
     const [secretariaState, setSecretariaState] = useState(false);
 
     useEffect(() => {
-        axios.get("https://backend-nader.herokuapp.com/expedientes").then((resp) => {
+        axios.get("https://backend-nader-asociados.up.railway.app/expedientes").then((resp) => {
             setListOfJuicios(resp.data)
         });
-        axios.get("https://backend-nader.herokuapp.com/general/reportes/secretaria").then((resp) => {
+        axios.get("https://backend-nader-asociados.up.railway.app/general/reportes/secretaria").then((resp) => {
             setfichasSecretaria(getFichasSecretaria(resp.data[0], resp.data[1]));
         });
     }, []);

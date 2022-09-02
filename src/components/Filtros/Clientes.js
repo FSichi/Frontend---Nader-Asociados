@@ -32,7 +32,7 @@ export const ClientesFilter = () => {
 
     useEffect(() => {
         if (!bandera) {
-            axios.get("https://backend-nader.herokuapp.com/general/filtros/clientes").then((resp) => {
+            axios.get("https://backend-nader-asociados.up.railway.app/general/filtros/clientes").then((resp) => {
 
                 setListofClientes(resp.data[0]);
                 setListofEstados(resp.data[1]);

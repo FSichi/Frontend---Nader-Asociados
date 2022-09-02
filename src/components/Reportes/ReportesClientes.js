@@ -11,7 +11,7 @@ export const ReportesClientes = () => {
     const [listOfClientes, setListOfClientes] = useState([]);
 
     useEffect(() => {
-        axios.get("https://backend-nader.herokuapp.com/clientes").then((resp) => {
+        axios.get("https://backend-nader-asociados.up.railway.app/clientes").then((resp) => {
             setListOfClientes(resp.data)
         });
     }, [])

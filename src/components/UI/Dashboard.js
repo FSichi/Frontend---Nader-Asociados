@@ -9,7 +9,7 @@ export const Dashboard = () => {
     localStorage.removeItem("ruta");
 
     useEffect(() => {
-        axios.get("https://backend-nader.herokuapp.com/general/dashboard").then((resp) => {
+        axios.get("https://backend-nader-asociados.up.railway.app/general/dashboard").then((resp) => {
             setStateEstadoClientes(resp.data[0]);
             setStateEstadoJuicios(resp.data[1]);
             setListOfClientes(resp.data[2]);

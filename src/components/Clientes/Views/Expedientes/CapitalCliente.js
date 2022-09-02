@@ -8,7 +8,7 @@ export const CapitalCliente = ({ expediente, cliente }) => {
     const [banderaCarga, setBanderaCarga] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://backend-nader.herokuapp.com/expedientes/expCli/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader-asociados.up.railway.app/expedientes/expCli/${cliente.cuit_cuil}`).then((resp) => {
             setClienteExp(resp.data);
             setBanderaCarga(true);
         });

@@ -90,7 +90,7 @@ export const Telegramas = ({ cliente, estadoCli }) => {
 
     useEffect(() => {
 
-        axios.get(`https://backend-nader.herokuapp.com/clientes/telegramas/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/telegramas/${cliente.cuit_cuil}`).then((resp) => {
             setTelegramaCliente(resp.data);
         });
 

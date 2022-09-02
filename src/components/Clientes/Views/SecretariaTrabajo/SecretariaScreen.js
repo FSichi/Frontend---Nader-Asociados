@@ -10,7 +10,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
     useEffect(() => {
 
-        axios.get(`https://backend-nader.herokuapp.com/clientes/secretaria/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/secretaria/${cliente.cuit_cuil}`).then((resp) => {
             setSecretariaCliente(resp.data);
 
             setShowDenuncia(resp.data.tieneDenuncia);
@@ -109,7 +109,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader.herokuapp.com/clientes/secretaria/${secretariaCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader-asociados.up.railway.app/clientes/secretaria/${secretariaCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -203,7 +203,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader.herokuapp.com/clientes/secretaria/${secretariaCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader-asociados.up.railway.app/clientes/secretaria/${secretariaCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 
@@ -287,7 +287,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
                 /* LLAMAR A DB */
 
-                axios.put(`https://backend-nader.herokuapp.com/clientes/secretaria/${secretariaCliente.id}`, data).then((response) => {
+                axios.put(`https://backend-nader-asociados.up.railway.app/clientes/secretaria/${secretariaCliente.id}`, data).then((response) => {
                     console.log('Estado Actualizado: ', response.data);
                 });
 
@@ -305,7 +305,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
                     estadoOperacion: 'Completado'
                 }
 
-                axios.put(`https://backend-nader.herokuapp.com/clientes/estados/${estadoCli.id}`, estado_cliente).then((response) => {
+                axios.put(`https://backend-nader-asociados.up.railway.app/clientes/estados/${estadoCli.id}`, estado_cliente).then((response) => {
                     console.log('Estado Actualizado: ', response.data);
                 });
 
@@ -339,7 +339,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
                 /* ELIMINAR FICHA SECRETARIA */
 
-                axios.delete(`https://backend-nader.herokuapp.com/clientes/secretaria/${secretariaCliente.id}`).then((response) => {
+                axios.delete(`https://backend-nader-asociados.up.railway.app/clientes/secretaria/${secretariaCliente.id}`).then((response) => {
                     console.log(response.data);
                 });
 
@@ -357,7 +357,7 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
                     estadoOperacion: 'En Telegramas'
                 }
 
-                axios.put(`https://backend-nader.herokuapp.com/clientes/estados/${estadoCli.id}`, estado_cliente).then((response) => {
+                axios.put(`https://backend-nader-asociados.up.railway.app/clientes/estados/${estadoCli.id}`, estado_cliente).then((response) => {
                     console.log('Estado Actualizado: ', response.data);
                 });
 

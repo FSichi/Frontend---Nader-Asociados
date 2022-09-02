@@ -40,7 +40,7 @@ export const ClienteCard = ({ clienteExp, cliente, expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader.herokuapp.com/expedientes/expCli/${expedienteCliente.id}`, data).then((response) => {
+        axios.put(`https://backend-nader-asociados.up.railway.app/expedientes/expCli/${expedienteCliente.id}`, data).then((response) => {
             console.log('Estado Actualizado: ', response.data);
         });
 

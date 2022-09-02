@@ -40,7 +40,7 @@ export const Juicios = () => {
                 fechaHasta: new Date(fechaHasta).getTime()
             }
 
-            axios.get(`https://backend-nader.herokuapp.com/filtros/juicios/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
+            axios.get(`https://backend-nader-asociados.up.railway.app/filtros/juicios/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
                 setTotalFacturado(resp.data[0]);
                 setIva(resp.data[1]);
 
