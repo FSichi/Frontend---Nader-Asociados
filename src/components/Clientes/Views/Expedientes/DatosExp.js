@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export const DatosExp = ({ expediente }) => {
 
-
     return (
         <div className='container-fluid bg-dark text-white mt-4 mb-5 p-5' style={{ borderRadius: '20px' }}>
             

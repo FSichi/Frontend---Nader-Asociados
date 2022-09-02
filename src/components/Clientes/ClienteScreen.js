@@ -131,11 +131,6 @@ export const ClienteScreen = ({ history }) => {
         });
     }
 
-    // console.log('Cliente: ', cliente);
-    // console.log('Estado del Cliente: ', estadoCli);
-    // console.log('Expediente del Cliente: ', expedienteCli); 
-    
-
     return (
         <div className='mt-4 ms-5 me-5 mb-5'>
 

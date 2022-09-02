@@ -88,11 +88,8 @@ export const EstadosCliente = ({ cliente }) => {
                                             </div>
                                             <div className='col-4'>
                                                 <input
-                                                    type="text"
+                                                    type="text" name='apyNombre' value={`Activo`} disabled
                                                     className="form-control form-control-lg text-center mt-2 bg-secondary text-white"
-                                                    name='apyNombre'
-                                                    value={`Activo`}
-                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -103,11 +100,8 @@ export const EstadosCliente = ({ cliente }) => {
                                             </div>
                                             <div className='col-4'>
                                                 <input
-                                                    type="text"
+                                                    type="text" name='apyNombre' value={estadoCliente.estadoOperacion} disabled
                                                     className="form-control form-control-lg text-center mt-2 bg-secondary text-white"
-                                                    name='apyNombre'
-                                                    value={estadoCliente.estadoOperacion}
-                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -116,7 +110,7 @@ export const EstadosCliente = ({ cliente }) => {
                                 )
                                 :
                                 (
-                                    <div>
+                                    <>
                                         <div className='row mt-5 d-flex justify-content-center mb-5'>
                                             <div className='col-6 mt-2'>
                                                 <h4>Seleccionar Estado del Cliente</h4>
@@ -155,7 +149,7 @@ export const EstadosCliente = ({ cliente }) => {
                                             <button className='btn btn-outline-light w-25 p-2' onClick={handleUpdate}> Actualizar Estado</button>
                                         </div>
 
-                                    </div>
+                                    </>
                                 )
                         }
 

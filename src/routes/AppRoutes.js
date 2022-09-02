@@ -73,8 +73,6 @@ export const AppRoutes = () => {
 
                 <Redirect to={'/dashboard'} />
 
-
-
             </Switch>
 
         </Router>

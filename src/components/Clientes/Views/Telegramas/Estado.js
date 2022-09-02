@@ -20,7 +20,6 @@ export const Estado = ({ cliente }) => {
     }, [cliente.cuit_cuil]);
 
     return (
-
         <div className='container-fluid mt-2 bg-dark text-white p-3' style={{ borderRadius: '20px' }}>
 
             <div className='row'>

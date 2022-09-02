@@ -68,7 +68,7 @@ export const TablaClientes = ({ clientes }) => {
 
 
     return (
-        <div >
+        <div>
             <TableContainer component={Paper} className={classes.tableContainer}>
                 <Table className={classes.table}>
                     <TableHead>

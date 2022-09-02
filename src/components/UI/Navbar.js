@@ -76,9 +76,7 @@ export const Navbar = () => {
                     </button>
 
                     <div className={navTogleHamb ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'} >
-                        <div className="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        </div>
                         <form className="d-flex justify-content-between itemCenter mt-md-2 mt-lg-0">
                             <div className="align-content-between">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0" onClick={handleTogleHamb}>
@@ -87,7 +85,7 @@ export const Navbar = () => {
                                         <span className="nav-link dropdown-toggle" onClick={handleTogleCli}>
                                             Clientes
                                         </span>
-                                        <ul className="dropdown-menu mt-4 " onClick={handleTogleCli}>
+                                        <ul className="dropdown-menu mt-4" onClick={handleTogleCli}>
                                             <li>
                                                 <Link className="dropdown-item" to='/cli/add'>
                                                     <i className="fas fa-user-plus me-2"></i>

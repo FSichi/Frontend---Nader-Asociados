@@ -76,7 +76,6 @@ export const getLabelExpediente = (expediente) => {
     }
 
     return expLabel
-
 }
 
 export const getLabelSecretaria = (secretaria) => {

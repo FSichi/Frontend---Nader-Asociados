@@ -11,13 +11,10 @@ export const ReportesClientes = () => {
     const [listOfClientes, setListOfClientes] = useState([]);
 
     useEffect(() => {
-
         axios.get("https://backend-nader.herokuapp.com/clientes").then((resp) => {
             setListOfClientes(resp.data)
         });
-
     }, [])
-
 
     const handleCliente = () => {
         setClientesState2(false);

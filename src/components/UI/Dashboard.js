@@ -163,13 +163,11 @@ export const Dashboard = () => {
 
                         <div className='mt-4 mb-4'>
                             <h2 className='text-center mt-3'>Empresas con mas Clientes Representados</h2>
-                            {/* <button className='btn btn-outline-light'>Exportar</button> */}
                         </div>
 
                         <hr />
 
                         <CallCenterGraf clientes={listOfClientes} />
-                        {/* <DonoutGraf clientes={clientes} /> */}
 
                     </div>
 

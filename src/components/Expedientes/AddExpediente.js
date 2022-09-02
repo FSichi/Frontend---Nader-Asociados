@@ -8,7 +8,6 @@ import { AbogadoApoderado, AbogadoGestor, CallCenter, customStyles, eliminarClie
 import { establecerAcumulador, getClientesByCuitCuilExact, getEstadoAddExpediente, getPosiblesClientes } from '../../selector/Clientes';
 import { crearFichasEstadoClientes, crearFichasExpedienteCliente, getEstadoRegisterExpediente } from '../../selector/Expedientes';
 
-
 export const AddExpediente = ({ history }) => {
 
     localStorage.setItem("ruta", `/exp/add`);
@@ -721,8 +720,6 @@ export const AddExpediente = ({ history }) => {
                                                                         </div>
                                                                     </div>
 
-
-
                                                                 </div>
 
                                                             ))
@@ -747,5 +744,3 @@ export const AddExpediente = ({ history }) => {
         </div>
     )
 }
-
-

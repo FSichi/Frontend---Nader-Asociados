@@ -1,5 +1,5 @@
 export const getClientesByID = (id, clientes) => {
-    
+
     return clientes.find(cliente => cliente.id === id);
 }
 
@@ -202,7 +202,7 @@ export const getExpedienteCliente = (cc, expedientes) => {
 
 export const getEstadosTelegramas = (telegramas) => {
 
-    if(!telegramas){
+    if (!telegramas) {
         return [];
     }
 
@@ -252,7 +252,7 @@ export const getEstadosTelegramas = (telegramas) => {
         estadoT5.value = '1'
     }
 
-    var estados = [ estadoT1, estadoT2, estadoT3, estadoT4, estadoT5 ];
+    var estados = [estadoT1, estadoT2, estadoT3, estadoT4, estadoT5];
 
     return estados;
 
@@ -612,6 +612,15 @@ export const getDataEstadoCliente = (cliente, estado, optionEstado, optionVolunt
 
 /* ---------------------------------------------------------------------------------------------- */
 
+export const ordenarClientes = (clientes) => {
+
+    const clientesOrdenados = clientes.sort(function (a, b) {
+        return a.apellidoyNombre.localeCompare(b.apellidoyNombre)
+    });
+
+    return clientesOrdenados;
+}
+
 export const getClientesEnTelegramas = (clientes, estados, firmas, telegramas) => {
 
     var clientesTelegramas = [];
@@ -654,7 +663,9 @@ export const getClientesEnTelegramas = (clientes, estados, firmas, telegramas) =
 
     });
 
-    return clientesReturn;
+    const clientesOrdenados = ordenarClientes(clientesReturn);
+
+    return clientesOrdenados;
 }
 
 export const getClientesEnJuicio = (clientes, estados) => {
@@ -671,7 +682,9 @@ export const getClientesEnJuicio = (clientes, estados) => {
         });
     });
 
-    return clientesJuicio;
+    const clientesOrdenados = ordenarClientes(clientesJuicio);
+
+    return clientesOrdenados;
 }
 
 export const getClientesEnSecretaria = (clientes, estados) => {
@@ -688,7 +701,9 @@ export const getClientesEnSecretaria = (clientes, estados) => {
         });
     });
 
-    return clientesSecretaria;
+    const clientesOrdenados = ordenarClientes(clientesSecretaria);
+
+    return clientesOrdenados;
 }
 
 export const getClientesEnDemanda = (clientes, estados, firmas, telegramas) => {
@@ -744,12 +759,14 @@ export const getClientesEnDemanda = (clientes, estados, firmas, telegramas) => {
 
     });
 
-    return clientesDemanda;
+    const clientesOrdenados = ordenarClientes(clientesDemanda);
+
+    return clientesOrdenados;
 }
 
 export const getPosiblesClientes = (callCenter, clientes, estados, firmas, telegramas) => {
 
-    if(callCenter === undefined){
+    if (callCenter === undefined) {
         return [];
     }
 
@@ -758,8 +775,8 @@ export const getPosiblesClientes = (callCenter, clientes, estados, firmas, teleg
     var clientesReturn = [];
 
     clientesAll.forEach(cliente => {
-        
-        if(cliente.callCenter === callCenter){
+
+        if (cliente.callCenter === callCenter) {
             clientesReturn.push(cliente);
         }
 
@@ -1171,7 +1188,7 @@ export const getClientesFilter = (optionCall, optionCese, optionEstado, Clientes
 
         });
     }
-    
+
     /* OCTAVA ALTERNATIVA -->  callCenter = 'Opcion Seleccionada' | tipoCese = 'Opcion Seleccionada' | estadoOperacion = 'Opcion Seleccionada' */
 
     if (callCenter !== 'TODOS' && tipoCese !== 'TODOS' && estadoOperacion !== 'TODOS') {

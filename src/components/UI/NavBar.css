@@ -51,3 +51,9 @@
     position: absolute;
     top: 0px;
 }
+
+.navbar-expand-md .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: end;
+}

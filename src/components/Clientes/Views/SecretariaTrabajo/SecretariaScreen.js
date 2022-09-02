@@ -375,11 +375,10 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
             }
         });
-        
+
     }
 
     return (
-
         <div>
 
             {/* FICHA DE SECRETARIA - PARTE DE ARRIBA */}
@@ -405,207 +404,31 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
                         (
                             <div>
 
-                                <div>
+                                {/* TIENE DENUNCIA Y FECHA DE AUDIENCIA */}
 
-                                    {/* TIENE DENUNCIA Y FECHA DE AUDIENCIA */}
+                                <div className='ms-5 me-5'>
 
-                                    <div className='ms-5 me-5'>
+                                    <div className='container bg-white text-dark mt-5 mb-4 p-4' style={{ borderRadius: '10px' }}>
 
-                                        <div className='container bg-white text-dark mt-5 mb-4 p-4' style={{ borderRadius: '10px' }}>
+                                        <div className='text-center fst-italic'>
+                                            <h3 className='fw-bold fs-2'>DENUNCIA</h3>
+                                        </div>
 
-                                            <div className='text-center fst-italic'>
-                                                <h3 className='fw-bold fs-2'>DENUNCIA</h3>
-                                            </div>
+                                        <hr />
 
-                                            <hr />
+                                        <div className='row mt-3'>
 
-                                            <div className='row mt-3'>
+                                            {/* TIENE DENUNCIA */}
 
-                                                {/* TIENE DENUNCIA */}
+                                            <div className='col-4 me-5'>
 
-                                                <div className='col-4 me-5'>
-
-                                                    <div className='row'>
-                                                        <div className='col-9 mt-2'>
-                                                            <span className="fs-5">Tiene Denuncia</span>
-                                                        </div>
-
-                                                        {
-                                                            (secretariaCliente.tieneDenuncia && secretariaCliente.estado)
-                                                                ?
-                                                                (
-                                                                    <div className='col-3'>
-                                                                        <input className="form-check-input fs-2 bg-dark" type="checkbox" checked onChange={() => { }} />
-                                                                    </div>
-                                                                )
-                                                                :
-                                                                (
-                                                                    <div className='col-3'>
-                                                                        {
-                                                                            (secretariaCliente.tieneDenuncia && showDenuncia)
-                                                                                ?
-                                                                                (
-                                                                                    <div>
-                                                                                        <input className="form-check-input fs-2 bg-dark" type="checkbox" checked onClick={() => { setShowDenuncia(!showDenuncia) }} onChange={() => { }} />
-                                                                                    </div>
-                                                                                )
-                                                                                :
-                                                                                (
-                                                                                    <div>
-                                                                                        <input className="form-check-input fs-2 bg-dark" type="checkbox" onClick={() => { setShowDenuncia(!showDenuncia) }} onChange={() => { }} />
-                                                                                    </div>
-                                                                                )
-                                                                        }
-                                                                    </div>
-                                                                )
-                                                        }
-
+                                                <div className='row'>
+                                                    <div className='col-9 mt-2'>
+                                                        <span className="fs-5">Tiene Denuncia</span>
                                                     </div>
-                                                </div>
-
-                                                {/* FECHA AUDIENCIA */}
-
-                                                <div className='col-6 ms-5'>
 
                                                     {
                                                         (secretariaCliente.tieneDenuncia && secretariaCliente.estado)
-                                                            ?
-                                                            (
-                                                                <div>
-                                                                    <div className='row'>
-                                                                        <div className='col-6 mt-2'>
-                                                                            <span className="fs-5">Fecha de Audiencia</span>
-                                                                        </div>
-                                                                        <div className='col-6'>
-                                                                            <div className="form-outline form-white text-center">
-
-                                                                                <input
-                                                                                    type="date"
-                                                                                    className="form-control form-control-lg text-center"
-                                                                                    value={secretariaCliente.fechaAudiencia}
-                                                                                    disabled
-                                                                                />
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                            :
-                                                            (
-                                                                <div>
-                                                                    {
-                                                                        (secretariaCliente.tieneDenuncia && showDenuncia)
-                                                                            ?
-                                                                            (
-                                                                                <div>
-                                                                                    <div className='row'>
-                                                                                        <div className='col-6 mt-2'>
-                                                                                            <span className="fs-5">Fecha de Audiencia</span>
-                                                                                        </div>
-                                                                                        <div className='col-6'>
-                                                                                            <div className="form-outline form-white text-center">
-
-                                                                                                <input
-                                                                                                    type="date"
-                                                                                                    className="form-control form-control-lg text-center"
-                                                                                                    name='fechaAudiencia'
-                                                                                                    value={fechaAudiencia}
-                                                                                                    onChange={handleInputChange}
-                                                                                                />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            )
-                                                                            :
-                                                                            (
-                                                                                <div>
-                                                                                    {
-                                                                                        (showDenuncia)
-                                                                                        &&
-                                                                                        (
-                                                                                            <div>
-                                                                                                <div className='row'>
-                                                                                                    <div className='col-6 mt-2'>
-                                                                                                        <span className="fs-5">Fecha de Audiencia</span>
-                                                                                                    </div>
-                                                                                                    <div className='col-6'>
-                                                                                                        <div className="form-outline form-white text-center">
-
-                                                                                                            <input
-                                                                                                                type="date"
-                                                                                                                className="form-control form-control-lg text-center"
-                                                                                                                name='fechaAudiencia'
-                                                                                                                value={fechaAudiencia}
-                                                                                                                onChange={handleInputChange}
-                                                                                                            />
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        )
-                                                                                    }
-                                                                                </div>
-
-                                                                            )
-                                                                    }
-                                                                </div>
-                                                            )
-                                                    }
-
-                                                </div>
-
-                                            </div>
-
-                                            {/* BOTON */}
-
-                                            <div>
-
-                                                {
-                                                    (!secretariaCliente.estado)
-                                                    &&
-                                                    (
-                                                        <div>
-                                                            <hr />
-
-                                                            <div className='col-12 d-flex justify-content-center mt-4'>
-                                                                <button className='btn btn-outline-dark' onClick={handleEstablecerDenuncia}> Establecer Denuncia </button>
-                                                            </div>
-                                                        </div>
-                                                    )
-                                                }
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    {/* FICHA DE SI HAY ACUERDO */}
-
-                                    <div className='ms-5 me-5'>
-
-                                        <div className='container bg-white text-dark mt-5 mb-4 p-4' style={{ borderRadius: '10px' }}>
-
-                                            {/* TITULO */}
-
-                                            <div className='text-center fst-italic'>
-                                                <h3 className='fw-bold fs-2'>ACUERDO</h3>
-                                            </div>
-
-                                            <hr />
-
-                                            {/* HAY ACUERDO ?  */}
-
-                                            <div className='col-4 ms-2'>
-
-                                                <div className='row'>
-                                                    <div className='col-8 mt-2'>
-                                                        <span className="fs-5">Hay Acuerdo ? </span>
-                                                    </div>
-
-                                                    {
-                                                        (secretariaCliente.hayAcuerdo && secretariaCliente.estado)
                                                             ?
                                                             (
                                                                 <div className='col-3'>
@@ -616,261 +439,111 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
                                                             (
                                                                 <div className='col-3'>
                                                                     {
-                                                                        (secretariaCliente.hayAcuerdo && showAcuerdo)
+                                                                        (secretariaCliente.tieneDenuncia && showDenuncia)
                                                                             ?
                                                                             (
                                                                                 <div>
-                                                                                    <input className="form-check-input fs-2 bg-dark" type="checkbox" checked onClick={() => { setShowAcuerdo(!showAcuerdo) }} onChange={() => { }} />
+                                                                                    <input className="form-check-input fs-2 bg-dark" type="checkbox" checked onClick={() => { setShowDenuncia(!showDenuncia) }} onChange={() => { }} />
                                                                                 </div>
                                                                             )
                                                                             :
                                                                             (
                                                                                 <div>
-                                                                                    <input className="form-check-input fs-2 bg-dark" type="checkbox" onClick={() => { setShowAcuerdo(!showAcuerdo) }} onChange={() => { }} />
+                                                                                    <input className="form-check-input fs-2 bg-dark" type="checkbox" onClick={() => { setShowDenuncia(!showDenuncia) }} onChange={() => { }} />
                                                                                 </div>
                                                                             )
                                                                     }
                                                                 </div>
-
                                                             )
                                                     }
 
                                                 </div>
-
                                             </div>
 
-                                            {/* FICHA DE CAPITALES */}
+                                            {/* FECHA AUDIENCIA */}
 
-                                            <div>
+                                            <div className='col-6 ms-5'>
 
                                                 {
-                                                    (secretariaCliente.hayAcuerdo && secretariaCliente.estado)
+                                                    (secretariaCliente.tieneDenuncia && secretariaCliente.estado)
                                                         ?
                                                         (
-                                                            <div className='row mt-5'>
+                                                            <div>
+                                                                <div className='row'>
+                                                                    <div className='col-6 mt-2'>
+                                                                        <span className="fs-5">Fecha de Audiencia</span>
+                                                                    </div>
+                                                                    <div className='col-6'>
+                                                                        <div className="form-outline form-white text-center">
 
-                                                                <div className='col-3'>
-                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                        <span className="fs-5">Capital Trabajador</span>
-                                                                        <input
-                                                                            type="text"
-                                                                            className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                            value={'$ ' + secretariaCliente.capitalTrabajador}
-                                                                            disabled
-                                                                        />
+                                                                            <input
+                                                                                type="date"
+                                                                                className="form-control form-control-lg text-center"
+                                                                                value={secretariaCliente.fechaAudiencia}
+                                                                                disabled
+                                                                            />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-
-                                                                <div className='col-6'>
-                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                        <span className="fs-5">Honorarios Pacto de Cuota Litis</span>
-                                                                        <input
-                                                                            type="text"
-                                                                            className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                            value={'$ ' + secretariaCliente.honorariosPCL}
-                                                                            disabled
-                                                                        />
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className='col-3'>
-                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                        <span className="fs-5">Honorarios Convenidos</span>
-                                                                        <input
-                                                                            type="text"
-                                                                            className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                            value={'$ ' + secretariaCliente.honorariosConvenidos}
-                                                                            disabled
-                                                                        />
-                                                                    </div>
-                                                                </div>
-
                                                             </div>
                                                         )
                                                         :
                                                         (
                                                             <div>
                                                                 {
-                                                                    (secretariaCliente.hayAcuerdo && showAcuerdo)
+                                                                    (secretariaCliente.tieneDenuncia && showDenuncia)
                                                                         ?
                                                                         (
-                                                                            <div className='row mt-5'>
+                                                                            <div>
+                                                                                <div className='row'>
+                                                                                    <div className='col-6 mt-2'>
+                                                                                        <span className="fs-5">Fecha de Audiencia</span>
+                                                                                    </div>
+                                                                                    <div className='col-6'>
+                                                                                        <div className="form-outline form-white text-center">
 
-                                                                                {/* CAPITAL TRABAJADOR */}
-
-                                                                                <div className='col-3'>
-                                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                                        <span className="fs-5">Capital Trabajador</span>
-                                                                                        <input
-                                                                                            type="text"
-                                                                                            className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                                            name='capitalTrabajador'
-                                                                                            value={capitalTrabajador}
-                                                                                            onChange={handleInputChange}
-                                                                                            onKeyPress={(event) => {
-                                                                                                if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
-                                                                                                    event.preventDefault();
-                                                                                                }
-                                                                                            }}
-                                                                                        />
+                                                                                            <input
+                                                                                                type="date"
+                                                                                                className="form-control form-control-lg text-center"
+                                                                                                name='fechaAudiencia'
+                                                                                                value={fechaAudiencia}
+                                                                                                onChange={handleInputChange}
+                                                                                            />
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-
-                                                                                {/* HONORARIOS PCL */}
-
-                                                                                <div className='col-6'>
-                                                                                    {
-                                                                                        (capitalTrabajador === '')
-                                                                                            ?
-                                                                                            (
-                                                                                                <div>
-                                                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                                                        <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
-                                                                                                        <input
-                                                                                                            type="text"
-                                                                                                            className="form-control form-control-lg text-center bg-secondary text-white mt-2"
-                                                                                                            value={`$ ... `}
-                                                                                                            disabled
-                                                                                                        />
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                            )
-                                                                                            :
-                                                                                            (
-                                                                                                <div>
-                                                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                                                        <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
-                                                                                                        <input
-                                                                                                            type="text"
-                                                                                                            className="form-control form-control-lg text-center bg-secondary text-white mt-2"
-                                                                                                            placeholder='$ ...'
-                                                                                                            name='honPCL'
-                                                                                                            value={(parseInt(capitalTrabajador) * 0.20).toFixed(2).toString()}
-                                                                                                            disabled
-                                                                                                        />
-                                                                                                    </div>
-                                                                                                </div>
-
-                                                                                            )
-                                                                                    }
-                                                                                </div>
-
-                                                                                {/* HONORARIOS CONVENIDOS */}
-
-                                                                                <div className='col-3'>
-                                                                                    <div className="form-outline form-white mb-4 text-center">
-                                                                                        <span className="fs-5">Honorarios Convenidos</span>
-                                                                                        <input
-                                                                                            type="text"
-                                                                                            className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                                            name='honorariosConvenidos'
-                                                                                            value={honorariosConvenidos}
-                                                                                            onChange={handleInputChange}
-                                                                                            onKeyPress={(event) => {
-                                                                                                if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
-                                                                                                    event.preventDefault();
-                                                                                                }
-                                                                                            }}
-                                                                                        />
-                                                                                    </div>
-                                                                                </div>
-
                                                                             </div>
                                                                         )
                                                                         :
                                                                         (
                                                                             <div>
                                                                                 {
-                                                                                    (showAcuerdo)
+                                                                                    (showDenuncia)
                                                                                     &&
                                                                                     (
-                                                                                        <div className='row mt-5'>
+                                                                                        <div>
+                                                                                            <div className='row'>
+                                                                                                <div className='col-6 mt-2'>
+                                                                                                    <span className="fs-5">Fecha de Audiencia</span>
+                                                                                                </div>
+                                                                                                <div className='col-6'>
+                                                                                                    <div className="form-outline form-white text-center">
 
-                                                                                            {/* CAPITAL TRABAJADOR */}
-
-                                                                                            <div className='col-3'>
-                                                                                                <div className="form-outline form-white mb-4 text-center">
-                                                                                                    <span className="fs-5">Capital Trabajador</span>
-                                                                                                    <input
-                                                                                                        type="text"
-                                                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                                                        name='capitalTrabajador'
-                                                                                                        value={capitalTrabajador}
-                                                                                                        onChange={handleInputChange}
-                                                                                                        onKeyPress={(event) => {
-                                                                                                            if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
-                                                                                                                event.preventDefault();
-                                                                                                            }
-                                                                                                        }}
-                                                                                                    />
+                                                                                                        <input
+                                                                                                            type="date"
+                                                                                                            className="form-control form-control-lg text-center"
+                                                                                                            name='fechaAudiencia'
+                                                                                                            value={fechaAudiencia}
+                                                                                                            onChange={handleInputChange}
+                                                                                                        />
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
-
-                                                                                            {/* HONORARIOS PCL */}
-
-                                                                                            <div className='col-6'>
-                                                                                                {
-                                                                                                    (capitalTrabajador === '')
-                                                                                                        ?
-                                                                                                        (
-                                                                                                            <div>
-                                                                                                                <div className="form-outline form-white mb-4 text-center">
-                                                                                                                    <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
-                                                                                                                    <input
-                                                                                                                        type="text"
-                                                                                                                        className="form-control form-control-lg text-center bg-secondary text-white"
-                                                                                                                        value={`$ ... `}
-                                                                                                                        disabled
-                                                                                                                    />
-                                                                                                                </div>
-                                                                                                            </div>
-
-                                                                                                        )
-                                                                                                        :
-                                                                                                        (
-                                                                                                            <div>
-                                                                                                                <div className="form-outline form-white mb-4 text-center">
-                                                                                                                    <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
-                                                                                                                    <input
-                                                                                                                        type="text"
-                                                                                                                        className="form-control form-control-lg text-center bg-secondary text-white"
-                                                                                                                        placeholder='$ ...'
-                                                                                                                        name='honPCL'
-                                                                                                                        value={(parseInt(capitalTrabajador) * 0.20).toFixed(2).toString()}
-                                                                                                                        disabled
-                                                                                                                    />
-                                                                                                                </div>
-                                                                                                            </div>
-
-                                                                                                        )
-                                                                                                }
-                                                                                            </div>
-
-                                                                                            {/* HONORARIOS CONVENIDOS */}
-
-                                                                                            <div className='col-3'>
-                                                                                                <div className="form-outline form-white mb-4 text-center">
-                                                                                                    <span className="fs-5">Honorarios Convenidos</span>
-                                                                                                    <input
-                                                                                                        type="text"
-                                                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
-                                                                                                        name='honorariosConvenidos'
-                                                                                                        value={honorariosConvenidos}
-                                                                                                        onChange={handleInputChange}
-                                                                                                        onKeyPress={(event) => {
-                                                                                                            if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
-                                                                                                                event.preventDefault();
-                                                                                                            }
-                                                                                                        }}
-                                                                                                    />
-                                                                                                </div>
-                                                                                            </div>
-
                                                                                         </div>
                                                                                     )
                                                                                 }
                                                                             </div>
+
                                                                         )
                                                                 }
                                                             </div>
@@ -879,24 +552,346 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
 
                                             </div>
 
-                                            {/* BOTON ACTUALIZAR ACUERDO */}
+                                        </div>
 
-                                            <div>
+                                        {/* BOTON */}
+
+                                        <div>
+
+                                            {
+                                                (!secretariaCliente.estado)
+                                                &&
+                                                (
+                                                    <div>
+                                                        <hr />
+
+                                                        <div className='col-12 d-flex justify-content-center mt-4'>
+                                                            <button className='btn btn-outline-dark' onClick={handleEstablecerDenuncia}> Establecer Denuncia </button>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                {/* FICHA DE SI HAY ACUERDO */}
+
+                                <div className='ms-5 me-5'>
+
+                                    <div className='container bg-white text-dark mt-5 mb-4 p-4' style={{ borderRadius: '10px' }}>
+
+                                        {/* TITULO */}
+
+                                        <div className='text-center fst-italic'>
+                                            <h3 className='fw-bold fs-2'>ACUERDO</h3>
+                                        </div>
+
+                                        <hr />
+
+                                        {/* HAY ACUERDO ?  */}
+
+                                        <div className='col-4 ms-2'>
+
+                                            <div className='row'>
+                                                <div className='col-8 mt-2'>
+                                                    <span className="fs-5">Hay Acuerdo ? </span>
+                                                </div>
 
                                                 {
-                                                    (!secretariaCliente.estado)
-                                                    &&
-                                                    (
-                                                        <div className='row'>
-                                                            <div className='col-12 d-flex justify-content-center mt-4'>
-                                                                <button className='btn btn-outline-dark' onClick={handleEstablecerAcuerdo}> Actualizar Acuerdo</button>
+                                                    (secretariaCliente.hayAcuerdo && secretariaCliente.estado)
+                                                        ?
+                                                        (
+                                                            <div className='col-3'>
+                                                                <input className="form-check-input fs-2 bg-dark" type="checkbox" checked onChange={() => { }} />
                                                             </div>
-                                                        </div>
+                                                        )
+                                                        :
+                                                        (
+                                                            <div className='col-3'>
+                                                                {
+                                                                    (secretariaCliente.hayAcuerdo && showAcuerdo)
+                                                                        ?
+                                                                        (
+                                                                            <div>
+                                                                                <input className="form-check-input fs-2 bg-dark" type="checkbox" checked onClick={() => { setShowAcuerdo(!showAcuerdo) }} onChange={() => { }} />
+                                                                            </div>
+                                                                        )
+                                                                        :
+                                                                        (
+                                                                            <div>
+                                                                                <input className="form-check-input fs-2 bg-dark" type="checkbox" onClick={() => { setShowAcuerdo(!showAcuerdo) }} onChange={() => { }} />
+                                                                            </div>
+                                                                        )
+                                                                }
+                                                            </div>
 
-                                                    )
+                                                        )
                                                 }
 
                                             </div>
+
+                                        </div>
+
+                                        {/* FICHA DE CAPITALES */}
+
+                                        <div>
+
+                                            {
+                                                (secretariaCliente.hayAcuerdo && secretariaCliente.estado)
+                                                    ?
+                                                    (
+                                                        <div className='row mt-5'>
+
+                                                            <div className='col-3'>
+                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                    <span className="fs-5">Capital Trabajador</span>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                        value={'$ ' + secretariaCliente.capitalTrabajador}
+                                                                        disabled
+                                                                    />
+                                                                </div>
+                                                            </div>
+
+                                                            <div className='col-6'>
+                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                    <span className="fs-5">Honorarios Pacto de Cuota Litis</span>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                        value={'$ ' + secretariaCliente.honorariosPCL}
+                                                                        disabled
+                                                                    />
+                                                                </div>
+                                                            </div>
+
+                                                            <div className='col-3'>
+                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                    <span className="fs-5">Honorarios Convenidos</span>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                        value={'$ ' + secretariaCliente.honorariosConvenidos}
+                                                                        disabled
+                                                                    />
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    )
+                                                    :
+                                                    (
+                                                        <div>
+                                                            {
+                                                                (secretariaCliente.hayAcuerdo && showAcuerdo)
+                                                                    ?
+                                                                    (
+                                                                        <div className='row mt-5'>
+
+                                                                            {/* CAPITAL TRABAJADOR */}
+
+                                                                            <div className='col-3'>
+                                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                                    <span className="fs-5">Capital Trabajador</span>
+                                                                                    <input
+                                                                                        type="text"
+                                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                                        name='capitalTrabajador'
+                                                                                        value={capitalTrabajador}
+                                                                                        onChange={handleInputChange}
+                                                                                        onKeyPress={(event) => {
+                                                                                            if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
+                                                                                                event.preventDefault();
+                                                                                            }
+                                                                                        }}
+                                                                                    />
+                                                                                </div>
+                                                                            </div>
+
+                                                                            {/* HONORARIOS PCL */}
+
+                                                                            <div className='col-6'>
+                                                                                {
+                                                                                    (capitalTrabajador === '')
+                                                                                        ?
+                                                                                        (
+                                                                                            <div>
+                                                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                                                    <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
+                                                                                                    <input
+                                                                                                        type="text"
+                                                                                                        className="form-control form-control-lg text-center bg-secondary text-white mt-2"
+                                                                                                        value={`$ ... `}
+                                                                                                        disabled
+                                                                                                    />
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        )
+                                                                                        :
+                                                                                        (
+                                                                                            <div>
+                                                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                                                    <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
+                                                                                                    <input
+                                                                                                        type="text"
+                                                                                                        className="form-control form-control-lg text-center bg-secondary text-white mt-2"
+                                                                                                        placeholder='$ ...'
+                                                                                                        name='honPCL'
+                                                                                                        value={(parseInt(capitalTrabajador) * 0.20).toFixed(2).toString()}
+                                                                                                        disabled
+                                                                                                    />
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        )
+                                                                                }
+                                                                            </div>
+
+                                                                            {/* HONORARIOS CONVENIDOS */}
+
+                                                                            <div className='col-3'>
+                                                                                <div className="form-outline form-white mb-4 text-center">
+                                                                                    <span className="fs-5">Honorarios Convenidos</span>
+                                                                                    <input
+                                                                                        type="text"
+                                                                                        className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                                        name='honorariosConvenidos'
+                                                                                        value={honorariosConvenidos}
+                                                                                        onChange={handleInputChange}
+                                                                                        onKeyPress={(event) => {
+                                                                                            if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
+                                                                                                event.preventDefault();
+                                                                                            }
+                                                                                        }}
+                                                                                    />
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    )
+                                                                    :
+                                                                    (
+                                                                        <div>
+                                                                            {
+                                                                                (showAcuerdo)
+                                                                                &&
+                                                                                (
+                                                                                    <div className='row mt-5'>
+
+                                                                                        {/* CAPITAL TRABAJADOR */}
+
+                                                                                        <div className='col-3'>
+                                                                                            <div className="form-outline form-white mb-4 text-center">
+                                                                                                <span className="fs-5">Capital Trabajador</span>
+                                                                                                <input
+                                                                                                    type="text"
+                                                                                                    className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                                                    name='capitalTrabajador'
+                                                                                                    value={capitalTrabajador}
+                                                                                                    onChange={handleInputChange}
+                                                                                                    onKeyPress={(event) => {
+                                                                                                        if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
+                                                                                                            event.preventDefault();
+                                                                                                        }
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        {/* HONORARIOS PCL */}
+
+                                                                                        <div className='col-6'>
+                                                                                            {
+                                                                                                (capitalTrabajador === '')
+                                                                                                    ?
+                                                                                                    (
+                                                                                                        <div>
+                                                                                                            <div className="form-outline form-white mb-4 text-center">
+                                                                                                                <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
+                                                                                                                <input
+                                                                                                                    type="text"
+                                                                                                                    className="form-control form-control-lg text-center bg-secondary text-white"
+                                                                                                                    value={`$ ... `}
+                                                                                                                    disabled
+                                                                                                                />
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                    )
+                                                                                                    :
+                                                                                                    (
+                                                                                                        <div>
+                                                                                                            <div className="form-outline form-white mb-4 text-center">
+                                                                                                                <span className="fs-5">Honorarios de Pacto de Cuota Litis</span>
+                                                                                                                <input
+                                                                                                                    type="text"
+                                                                                                                    className="form-control form-control-lg text-center bg-secondary text-white"
+                                                                                                                    placeholder='$ ...'
+                                                                                                                    name='honPCL'
+                                                                                                                    value={(parseInt(capitalTrabajador) * 0.20).toFixed(2).toString()}
+                                                                                                                    disabled
+                                                                                                                />
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                    )
+                                                                                            }
+                                                                                        </div>
+
+                                                                                        {/* HONORARIOS CONVENIDOS */}
+
+                                                                                        <div className='col-3'>
+                                                                                            <div className="form-outline form-white mb-4 text-center">
+                                                                                                <span className="fs-5">Honorarios Convenidos</span>
+                                                                                                <input
+                                                                                                    type="text"
+                                                                                                    className="form-control form-control-lg text-center bg-dark text-white mt-2"
+                                                                                                    name='honorariosConvenidos'
+                                                                                                    value={honorariosConvenidos}
+                                                                                                    onChange={handleInputChange}
+                                                                                                    onKeyPress={(event) => {
+                                                                                                        if (!/[0-9]/.test(event.key) && !/[.]/.test(event.key)) {
+                                                                                                            event.preventDefault();
+                                                                                                        }
+                                                                                                    }}
+                                                                                                />
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                )
+                                                                            }
+                                                                        </div>
+                                                                    )
+                                                            }
+                                                        </div>
+                                                    )
+                                            }
+
+                                        </div>
+
+                                        {/* BOTON ACTUALIZAR ACUERDO */}
+
+                                        <div>
+
+                                            {
+                                                (!secretariaCliente.estado)
+                                                &&
+                                                (
+                                                    <div className='row'>
+                                                        <div className='col-12 d-flex justify-content-center mt-4'>
+                                                            <button className='btn btn-outline-dark' onClick={handleEstablecerAcuerdo}> Actualizar Acuerdo</button>
+                                                        </div>
+                                                    </div>
+
+                                                )
+                                            }
 
                                         </div>
 
@@ -1010,7 +1005,5 @@ export const SecretariaScreen = ({ cliente, sc, estadoCli }) => {
             </div>
 
         </div>
-
-
     )
 }

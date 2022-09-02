@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from '../../../hooks/useForm';
-import { getClientesByAll } from '../../../selector/Clientes';
+import { getClientesByAll, ordenarClientes } from '../../../selector/Clientes';
 import { TablaClientes } from './TablaClientes';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ export const ClientesListTodos = () => {
     useEffect(() => {
 
         axios.get("https://backend-nader.herokuapp.com/clientes").then((response) => {
-            setListClientes(response.data)
+            setListClientes(ordenarClientes(response.data));
         });
 
     }, []);

@@ -147,7 +147,6 @@ export const Resumen = ({ cliente, estadoCli, history }) => {
                                             <h2 className='mt-2 fst-italic' style={{ fontSize: '1.3rem' }}><i className="fas fa-mobile-alt"></i> {cliente.telPropio}</h2>
 
                                             <a
-                                                // href="https://api.whatsapp.com/send?phone=543815687566&text=Hola%20Como%20Estas!"
                                                 href={`https://api.whatsapp.com/send?phone=54${cliente.telPropio}`}
                                                 target="_blank"
                                                 rel='noreferrer'

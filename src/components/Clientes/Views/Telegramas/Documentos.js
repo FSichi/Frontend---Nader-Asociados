@@ -6,11 +6,9 @@ import { useForm } from '../../../../hooks/useForm';
 import { EstadoTelegrama, customStylesEstados } from '../../../../helpers/TelegramasSelector'
 import { getEstadosTelegramas } from '../../../../selector/Clientes';
 
-
 export const Documentos = ({ cliente, estadoCli }) => {
 
     useEffect(() => {
-
         axios.get(`https://backend-nader.herokuapp.com/clientes/telegramas/${cliente.cuit_cuil}`).then((resp) => {
             setTelegramasCliente(resp.data);
 
@@ -21,7 +19,6 @@ export const Documentos = ({ cliente, estadoCli }) => {
 
             setBandera2(true);
         });
-
     }, [cliente.cuit_cuil]);
 
     const [estadoCliente, setEstadoCliente] = useState({});
@@ -505,7 +502,6 @@ export const Documentos = ({ cliente, estadoCli }) => {
                                                         />
                                                     )
                                             }
-
 
                                         </div>
                                     </div>
