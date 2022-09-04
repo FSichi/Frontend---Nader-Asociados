@@ -24,7 +24,6 @@ export const Dashboard = () => {
     const estadoJuicios = getCantidadJuicios(stateEstadoJuicios);
     const distClientes = getDistribucionClientes(stateEstadoClientes);
 
-
     return (
         <div className='container-fluid ' >
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import Swal from 'sweetalert2'
 import {
     Table,
     TableBody,
@@ -15,7 +16,8 @@ import {
 } from '@material-ui/core';
 
 // import { Popover, Menu, PeopleIcon, EditIcon, Position, TrashIcon } from 'evergreen-ui'
-import { Popover, Menu, PeopleIcon, EditIcon, Position } from 'evergreen-ui'
+import { Popover, Menu, PeopleIcon, EditIcon, Position, TrashIcon } from 'evergreen-ui'
+import { deleteCliente, getClienteDeleteState } from '../../../selector/DeleteCliente';
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -65,6 +67,26 @@ export const TablaClientes = ({ clientes }) => {
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
+
+    const handleDelete = (id, cc_cliente) => {
+
+        const state = getClienteDeleteState(id, clientes).then(() => {
+
+            if (state) {
+                deleteCliente(id, cc_cliente);
+            } else {
+                Swal.fire({
+                    title: 'No es posible eliminar este Cliente',
+                    text: 'Recuerda que solo puedes eliminar clientes que no esten asociados actualmente ni historicamente a un expediente o ficha de secretaria',
+                    icon: 'error',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Continuar'
+                });
+
+                return;
+            }
+        });
+    }
 
 
     return (
@@ -139,20 +161,20 @@ export const TablaClientes = ({ clientes }) => {
                                         content={
                                             <Menu>
                                                 <Menu.Group>
-                                                    <Menu.Item icon={PeopleIcon}>
-                                                        <Link to={`/cli/${row.id}`} style={{ textDecoration: 'none', color: 'black' }}>Visualizar</Link>
+                                                    <Menu.Item icon={PeopleIcon} intent="info">
+                                                        <Link to={`/cli/${row.id}`} style={{ textDecoration: 'none', color: 'blue' }}>Visualizar</Link>
                                                     </Menu.Item>
                                                     <Menu.Divider />
-                                                    <Menu.Item icon={EditIcon}>
+                                                    <Menu.Item icon={EditIcon} style={{ marginTop: '10px' }}>
                                                         <Link to={`/cli/${row.id}/edit`} style={{ textDecoration: 'none', color: 'black' }}>Editar</Link>
                                                     </Menu.Item>
                                                 </Menu.Group>
                                                 <Menu.Divider />
-                                                {/* <Menu.Group>
-                                                    <Menu.Item icon={TrashIcon} intent="danger">
+                                                <Menu.Group >
+                                                    <Menu.Item icon={TrashIcon} intent="danger" onClick={() => { handleDelete(row.id, row.cuit_cuil) }}>
                                                         Eliminar
                                                     </Menu.Item>
-                                                </Menu.Group> */}
+                                                </Menu.Group>
                                             </Menu>
                                         }
                                     >
