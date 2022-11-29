@@ -130,7 +130,7 @@ export const AddCliente = ({ history }) => {
             data.fechaEgreso = fechaEgreso;
         }
 
-        axios.post("https://backend-nader-asociados.up.railway.app/clientes", data).then((response) => {
+        axios.post("https://backend-nader.herokuapp.com/clientes", data).then((response) => {
             console.log('Cliente Registrado', response.data);
         });
 
@@ -151,7 +151,7 @@ export const AddCliente = ({ history }) => {
             estado_cliente.vJuicio = true;
         }
 
-        axios.post("https://backend-nader-asociados.up.railway.app/clientes/estados", estado_cliente).then((response) => {
+        axios.post("https://backend-nader.herokuapp.com/clientes/estados", estado_cliente).then((response) => {
             console.log('ESTADO CLIENTE', response.data);
         });
 
@@ -165,7 +165,7 @@ export const AddCliente = ({ history }) => {
             estadoGeneral: false,
         }
 
-        axios.post("https://backend-nader-asociados.up.railway.app/clientes/firmas", firmas_cliente).then((response) => {
+        axios.post("https://backend-nader.herokuapp.com/clientes/firmas", firmas_cliente).then((response) => {
             console.log('FIRMAS CLIENTE', response.data);
         });
 
@@ -189,7 +189,7 @@ export const AddCliente = ({ history }) => {
             estadoGeneral: false,
         }
 
-        axios.post("https://backend-nader-asociados.up.railway.app/clientes/telegramas", telegramas_cliente).then((response) => {
+        axios.post("https://backend-nader.herokuapp.com/clientes/telegramas", telegramas_cliente).then((response) => {
             console.log('FIRMAS CLIENTE', response.data);
         });
 

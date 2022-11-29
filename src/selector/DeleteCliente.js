@@ -6,7 +6,7 @@ export const getClienteDeleteState = async (id, clientes) => {
 
     const cliente = getClientesByID(id, clientes);
 
-    await axios.get(`https://backend-nader-asociados.up.railway.app/clientes/estados/${cliente.cuit_cuil}`).then((resp) => {
+    await axios.get(`https://backend-nader.herokuapp.com/clientes/estados/${cliente.cuit_cuil}`).then((resp) => {
         if (resp.data.estadoOperacion === 'En Telegramas') {
             console.log('Entre a True');
             return true
@@ -33,13 +33,13 @@ export const deleteCliente = (id, cc_cliente) => {
     }).then((result) => {
         if (result.isConfirmed) {
 
-            axios.delete(`https://backend-nader-asociados.up.railway.app/clientes/${id}`).then((response) => {
+            axios.delete(`https://backend-nader.herokuapp.com/clientes/${id}`).then((response) => {
 
-                axios.delete(`https://backend-nader-asociados.up.railway.app/clientes/estados/${cc_cliente}`).then((response) => {
+                axios.delete(`https://backend-nader.herokuapp.com/clientes/estados/${cc_cliente}`).then((response) => {
 
-                    axios.delete(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${cc_cliente}`).then((response) => {
+                    axios.delete(`https://backend-nader.herokuapp.com/clientes/firmas/${cc_cliente}`).then((response) => {
 
-                        axios.delete(`https://backend-nader-asociados.up.railway.app/clientes/telegramas/${cc_cliente}`).then((response) => {
+                        axios.delete(`https://backend-nader.herokuapp.com/clientes/telegramas/${cc_cliente}`).then((response) => {
 
                             Swal.fire({
                                 title: 'Cliente Eliminado con Exito',

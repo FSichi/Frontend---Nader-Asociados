@@ -85,7 +85,7 @@ export const SecretariaHome = ({ cliente, estadoCli }) => {
 
     useEffect(() => {
 
-        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/secretaria/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/secretaria/${cliente.cuit_cuil}`).then((resp) => {
             setSecretariaCliente(resp.data);
             setBanderaCarga(true);
         });

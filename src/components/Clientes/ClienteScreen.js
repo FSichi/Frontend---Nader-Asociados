@@ -101,7 +101,7 @@ export const ClienteScreen = ({ history }) => {
     const [bandera2, setBandera2] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/${clienteId}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/${clienteId}`).then((resp) => {
             setCliente( resp.data );
             // console.log('DATOS DE DB CLIENTE: ', resp.data);
             setBandera(true);
@@ -110,7 +110,7 @@ export const ClienteScreen = ({ history }) => {
     }, [clienteId]);
 
     if (bandera) {
-        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/estados/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/estados/${cliente.cuit_cuil}`).then((resp) => {
             setEstadoCli( resp.data );
             // console.log('DATOS DE DB ESTADO: ', resp.data);
             setBandera(false);
@@ -122,7 +122,7 @@ export const ClienteScreen = ({ history }) => {
         (banderaCli && estadoCli.estadoOperacion === 'Completado' && !bandera2 && estadoCli.vJuicio)
     ) {
 
-        axios.get("https://backend-nader-asociados.up.railway.app/general/clienteScreen").then((resp) => {
+        axios.get("https://backend-nader.herokuapp.com/general/clienteScreen").then((resp) => {
 
             numExpCli = getExpedienteCliente(cliente.cuit_cuil, resp.data[1]);
             setExpediente(getExpedienteJuicioCliente(numExpCli.numeroExp, resp.data[0]));

@@ -10,7 +10,7 @@ export const ClientesListTodos = () => {
 
     useEffect(() => {
 
-        axios.get("https://backend-nader-asociados.up.railway.app/clientes").then((response) => {
+        axios.get("https://backend-nader.herokuapp.com/clientes").then((response) => {
             setListClientes(ordenarClientes(response.data));
         });
 

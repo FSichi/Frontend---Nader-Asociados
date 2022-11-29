@@ -20,11 +20,11 @@ export const EstadosObligatorios = ({ expediente }) => {
 
     useEffect(() => {
 
-        axios.get(`https://backend-nader-asociados.up.railway.app/expedientes/capitales/ind?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/expedientes/capitales/ind?data=${expediente.numeroExp}`).then((resp) => {
             setExpCapitales(resp.data);
         });
 
-        axios.get(`https://backend-nader-asociados.up.railway.app/general/juiciosObligatorios?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/juiciosObligatorios?data=${expediente.numeroExp}`).then((resp) => {
             setEstadosJuicio(resp.data[0]);
             setFechasJuicio(resp.data[1]);
             setBanderaCarga(true);
@@ -103,9 +103,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -179,9 +179,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -255,9 +255,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -331,9 +331,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -407,9 +407,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -483,9 +483,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -559,9 +559,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -635,9 +635,9 @@ export const EstadosObligatorios = ({ expediente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);
@@ -737,17 +737,17 @@ export const EstadosObligatorios = ({ expediente }) => {
         console.log('CAPITAL PRIMERA: ', expediente_capitalPrimera);
         console.log('EXPEDIENTES_CAPITALES: ', expediente_capitales);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/${estadosJuicio.id}`, dataEstado);
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
+        axios.put(`https://backend-nader.herokuapp.com/juicios/obligatorio/fechas/${fechasJuicio.id}`, dataFechas);
 
         /* LLAMAR A DB */
 
-        axios.post(`https://backend-nader-asociados.up.railway.app/expedientes/capitales/primera`, expediente_capitalPrimera).then((response) => {
+        axios.post(`https://backend-nader.herokuapp.com/expedientes/capitales/primera`, expediente_capitalPrimera).then((response) => {
             console.log('Capital Primera Creado: ', response.data);
         });
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/expedientes/capitales/${expCapitales.id}`, expediente_capitales);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/capitales/${expCapitales.id}`, expediente_capitales);
 
         setEstadosJuicio(dataEstado);
         setFechasJuicio(dataFechas);

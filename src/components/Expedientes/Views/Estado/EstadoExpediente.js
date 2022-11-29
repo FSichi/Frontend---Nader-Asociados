@@ -12,11 +12,11 @@ export const EstadoExpediente = ({ expediente, history }) => {
     const [estadosJuicio, setEstadosJuicio] = useState({});
 
     useEffect(() => {
-        axios.get(`https://backend-nader-asociados.up.railway.app/juicios/obligatorio/estado/ind?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/juicios/obligatorio/estado/ind?data=${expediente.numeroExp}`).then((resp) => {
             setEstadosJuicio(resp.data);
         });
 
-        axios.get(`https://backend-nader-asociados.up.railway.app/general/estadoExp?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/estadoExp?data=${expediente.numeroExp}`).then((resp) => {
             setListofClientes(resp.data);
         });
 
@@ -80,7 +80,7 @@ export const EstadoExpediente = ({ expediente, history }) => {
                     fechaFinalizado: hoy.getFullYear() + "-" + (hoy.getMonth() + 1) + "-" + hoy.getDate()
                 }
 
-                axios.put(`https://backend-nader-asociados.up.railway.app/expedientes/${expediente.id}`, data);
+                axios.put(`https://backend-nader.herokuapp.com/expedientes/${expediente.id}`, data);
 
                 /* CAMBIAR ESTADO A COMPLETADO DE LOS CLIENTES DE ESE JUICIO */
 
@@ -110,7 +110,7 @@ export const EstadoExpediente = ({ expediente, history }) => {
                         estadoOperacion: 'Completado'
                     }
 
-                    axios.put(`https://backend-nader-asociados.up.railway.app/clientes/estados/${cliente.id}`, estadoCliente);
+                    axios.put(`https://backend-nader.herokuapp.com/clientes/estados/${cliente.id}`, estadoCliente);
 
                 });
 

@@ -39,7 +39,7 @@ export const General = () => {
                 fechaHasta: new Date(fechaHasta).getTime()
             }
 
-            axios.get(`https://backend-nader-asociados.up.railway.app/filtros/general/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
+            axios.get(`https://backend-nader.herokuapp.com/filtros/general/${fechas.fechaDesde}/${fechas.fechaHasta}`).then((resp) => {
                 setTotalFacturado(resp.data);
                 setBanderaCarga(true);
             });

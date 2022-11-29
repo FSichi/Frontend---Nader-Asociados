@@ -8,7 +8,7 @@ export const Clientes = ({ expediente }) => {
     const [banderaCarga, setBanderaCarga] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://backend-nader-asociados.up.railway.app/expedientes/expCli/fichasCli/all?data=${expediente.numeroExp}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/expedientes/expCli/fichasCli/all?data=${expediente.numeroExp}`).then((resp) => {
             setListofClientes(resp.data);
             setBanderaCarga(true);
         });

@@ -6,7 +6,7 @@ export const Firmas = ({ cliente, estadoCli }) => {
 
     useEffect(() => {
 
-        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/firmas/${cliente.cuit_cuil}`).then((resp) => {
             setFirmasCliente(resp.data);
 
             setFirmaPoder(resp.data.firmaPoder);
@@ -58,7 +58,7 @@ export const Firmas = ({ cliente, estadoCli }) => {
 
             console.log('Actualizando....');
 
-            axios.put(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
+            axios.put(`https://backend-nader.herokuapp.com/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
                 console.log('Firmas Actualizadas: ', response.data);
             });
 
@@ -92,7 +92,7 @@ export const Firmas = ({ cliente, estadoCli }) => {
 
             /* LLAMAR A LA DB */
 
-            axios.put(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
+            axios.put(`https://backend-nader.herokuapp.com/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
                 console.log('Firmas Actualizadas: ', response.data);
             });
 
@@ -143,7 +143,7 @@ export const Firmas = ({ cliente, estadoCli }) => {
 
             /* LLAMAR A LA DB */
 
-            axios.put(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
+            axios.put(`https://backend-nader.herokuapp.com/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
                 console.log('Firmas Actualizadas: ', response.data);
             });
 
@@ -177,7 +177,7 @@ export const Firmas = ({ cliente, estadoCli }) => {
 
             /* LLAMAR A LA DB */
 
-            axios.put(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
+            axios.put(`https://backend-nader.herokuapp.com/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
                 console.log('Firmas Actualizadas: ', response.data);
             });
 
@@ -240,7 +240,7 @@ export const Firmas = ({ cliente, estadoCli }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.put(`https://backend-nader-asociados.up.railway.app/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
+                axios.put(`https://backend-nader.herokuapp.com/clientes/firmas/${firmasCliente.id}`, data).then((response) => {
                     console.log('Firmas Actualizadas: ', response.data);
                 });
 

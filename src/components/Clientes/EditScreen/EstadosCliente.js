@@ -15,7 +15,7 @@ export const EstadosCliente = ({ cliente }) => {
     const [optionValueVoluntad, setOptionValueVoluntad] = useState({});
 
     useEffect(() => {
-        axios.get(`https://backend-nader-asociados.up.railway.app/clientes/estados/${cliente.cuit_cuil}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/clientes/estados/${cliente.cuit_cuil}`).then((resp) => {
             setEstadoCliente(resp.data);
 
             setOptionValueEstado(getLabelEstadoCliente(resp.data));
@@ -31,7 +31,7 @@ export const EstadosCliente = ({ cliente }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/clientes/estados/${estadoCliente.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/clientes/estados/${estadoCliente.id}`, data);
 
         setEstadoCliente(data);
 

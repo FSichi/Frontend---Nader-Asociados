@@ -91,7 +91,7 @@ export const MenuListExpediente = () => {
 
         localStorage.setItem("ruta", `/exp/list`);
 
-        axios.get(`https://backend-nader-asociados.up.railway.app/general/listadoExp`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/general/listadoExp`).then((resp) => {
             setExpedientesAll(resp.data[2]);
             setExpedientesIndividuales(resp.data[0]);
             setExpedientesColectivos(resp.data[1]);

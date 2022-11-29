@@ -41,7 +41,7 @@ export const SegundaInstancia = ({ expediente, fichaCapSeg }) => {
 
         /* LLAMAR A DB */
 
-        axios.put(`https://backend-nader-asociados.up.railway.app/expedientes/capitales/segunda/${fichaCapital.id}`, data);
+        axios.put(`https://backend-nader.herokuapp.com/expedientes/capitales/segunda/${fichaCapital.id}`, data);
 
         setFichaCapital(data);
 

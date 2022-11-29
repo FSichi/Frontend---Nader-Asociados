@@ -93,7 +93,7 @@ export const ExpedienteScreen = () => {
     const [banderaCarga, setBanderaCarga] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://backend-nader-asociados.up.railway.app/expedientes/${expedienteId}`).then((resp) => {
+        axios.get(`https://backend-nader.herokuapp.com/expedientes/${expedienteId}`).then((resp) => {
             setExpediente( resp.data );
             setBanderaCarga(true);
         });
